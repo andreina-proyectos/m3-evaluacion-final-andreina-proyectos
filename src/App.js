@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {FetchData} from './services/FetchData';
+import {fetchData} from './services/FetchData';
 import { Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import CharacterDetail from './components/CharacterDetail';
@@ -20,7 +20,7 @@ class App extends React.Component {
   }
 
   getFetchData() {
-    FetchData()
+    fetchData()
       .then(data => {
         this.setState({
           rmData:data.results

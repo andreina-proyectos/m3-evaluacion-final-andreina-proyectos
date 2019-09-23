@@ -19,7 +19,7 @@ const Home = props => {
     );
 };
 
-CharacterList.propTypes = {
+Home.propTypes = {
   rmData: PropTypes.arrayOf(PropTypes.object).isRequired,
   query: PropTypes.string.isRequired,
   handleInputChange: PropTypes.func.isRequired,
