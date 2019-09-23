@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const CharacterCard = (props) => {
   const {name, img, species} = props;
@@ -13,4 +14,10 @@ const CharacterCard = (props) => {
   )
 }
  
+CharacterCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  species: PropTypes.string.isRequired,
+};
+
 export default CharacterCard;

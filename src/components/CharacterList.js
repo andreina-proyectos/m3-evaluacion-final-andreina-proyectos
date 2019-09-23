@@ -1,6 +1,7 @@
 import React from 'react';
 import CharacterCard from './CharacterCard';
 import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const CharacterList = (props) => {
   const {rmData, query} = props;
@@ -29,5 +30,10 @@ const CharacterList = (props) => {
     </ul>
   )
 }
+
+CharacterList.propTypes = {
+  rmData: PropTypes.arrayOf(PropTypes.object).isRequired,
+  query: PropTypes.string.isRequired,
+};
 
 export default CharacterList;

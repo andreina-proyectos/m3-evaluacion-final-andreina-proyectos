@@ -1,12 +1,9 @@
 import React from 'react';
 import './App.css';
 import {FetchData} from './services/FetchData';
-import CharacterList from './components/CharacterList';
-import Filters from './components/Filters';
 import { Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import CharacterDetail from './components/CharacterDetail';
-
 
 class App extends React.Component {
   constructor(props) {
@@ -67,10 +64,6 @@ class App extends React.Component {
           />
         </Switch>
 
-        {/* <CharacterList
-          rmData={rmData}
-          query={query}
-        /> */}
       </div>
     );
   }
