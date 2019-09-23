@@ -60,6 +60,7 @@ class App extends React.Component {
             return(
               <CharacterDetail
               routerProps={routerProps}
+              rmData={rmData}
               />
             )
           }} 
