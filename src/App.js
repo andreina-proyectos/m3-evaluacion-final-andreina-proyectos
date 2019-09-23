@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import {FetchData} from './services/FetchData';
+import CharacterList from './components/CharacterList';
 
 class App extends React.Component {
   constructor(props) {
@@ -24,21 +25,13 @@ class App extends React.Component {
   }
 
   render() {
+    const {rmData} = this.state;
     return (
       <div className="App">
-        {this.state.rmData.map(item => {
-          return(
-            <ul className="character-list">
-              <li className="character-element">
-                <div className="image-container">
-                  <img src={item.image} alt={`Imagen de ${item.name}`} className="character__image"/>
-                </div>
-                <h2 className="character__name">{item.name}</h2>
-                <p className="character__specie">{item.species}</p>
-              </li>
-            </ul>
-          )
-        })}
+        <h1 className="title">RICK AND MORTY CHARACTERS</h1>
+        <CharacterList
+          rmData={rmData}
+        />
       </div>
     );
   }
