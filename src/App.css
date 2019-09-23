@@ -3,5 +3,14 @@
 }
 
 *{
-  list-style: none
+  list-style: none;
+  text-align: center;
+}
+
+.title {
+height: 1px;
+overflow:hidden;
+padding-top: 200px;
+background-image: url('./images/logo.png');
+background-repeat: no-repeat;
 }

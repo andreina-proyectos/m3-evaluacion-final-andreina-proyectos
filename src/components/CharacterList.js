@@ -1,5 +1,6 @@
 import React from 'react';
 import CharacterCard from './CharacterCard';
+import {Link} from 'react-router-dom';
 
 const CharacterList = (props) => {
   const {rmData, query} = props;
@@ -14,11 +15,13 @@ const CharacterList = (props) => {
         .map(item => {
           return(         
             <li key={item.id} className="character-element">
-              <CharacterCard
-              name = {item.name}
-              img = {item.image}
-              species = {item.species}
-              />
+              <Link to={`/character-detail/${item.id}`}>
+                <CharacterCard
+                name = {item.name}
+                img = {item.image}
+                species = {item.species}
+                />
+              </Link>
             </li> 
           )
         })
