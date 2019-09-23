@@ -7,8 +7,12 @@ const CharacterDetail = props => {
   const characterId = parseInt(routerProps.match.params.id);
 
   if(characterId > rmData.length) {
-    return('Sólo tenemos 20 personajes!')
-  }
+    return(
+      <React.Fragment>
+        <p className="message-route">Sólo tenemos 20 personajes!</p>
+        <Link to="/" className="link__go-back">Go back!</Link>
+      </React.Fragment>
+    )}
   else {};
 
   const cardClicked = rmData.find(item =>item.id === characterId);
