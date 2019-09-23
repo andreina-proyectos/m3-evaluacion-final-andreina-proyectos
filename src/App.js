@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import {FetchData} from './services/FetchData';
 
 class App extends React.Component {
   constructor(props) {
@@ -10,12 +11,12 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const endpoint = 'https://rickandmortyapi.com/api/character/';
+    this.getFetchData();
+  }
 
-    fetch(endpoint)
-      .then(response => response.json())
-      .then((data) => {
-        console.log(data);
+  getFetchData() {
+    FetchData()
+      .then(data => {
         this.setState({
           rmData:data.results
         })
@@ -34,7 +35,6 @@ class App extends React.Component {
                 </div>
                 <h2 className="character__name">{item.name}</h2>
                 <p className="character__specie">{item.species}</p>
-              {/* <div>{item.name}</div> */}
               </li>
             </ul>
           )
