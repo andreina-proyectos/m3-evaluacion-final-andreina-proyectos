@@ -5,6 +5,12 @@ import PropTypes from 'prop-types';
 const CharacterDetail = props => {
   const {rmData, routerProps} = props;
   const characterId = parseInt(routerProps.match.params.id);
+
+  if(characterId > rmData.length) {
+    return('Sólo tenemos 20 personajes!')
+  }
+  else {};
+
   const cardClicked = rmData.find(item =>item.id === characterId);
 
   if(cardClicked) {
