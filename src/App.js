@@ -3,6 +3,9 @@ import './App.css';
 import {FetchData} from './services/FetchData';
 import CharacterList from './components/CharacterList';
 import Filters from './components/Filters';
+import { Switch, Route } from 'react-router-dom';
+import Home from './components/Home';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -40,14 +43,26 @@ class App extends React.Component {
       <div className="App">
         <h1 className="title">RICK AND MORTY CHARACTERS</h1>
 
-        <Filters
-        handleInputChange={this.handleInputChange}
-        />
+        <Switch>
+          <Route exact path="/" render={() => {
+            return (
+              <Home
+                handleInputChange={this.handleInputChange}
+                rmData={rmData}
+                query={query}
+              />
+            )
+          }} 
+          />
 
-        <CharacterList
+          {/* <Route path="/character-detail" component={CharacterDetail} /> */}
+
+        </Switch>
+
+        {/* <CharacterList
           rmData={rmData}
           query={query}
-        />
+        /> */}
       </div>
     );
   }
