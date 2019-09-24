@@ -1,6 +1,4 @@
-![Adalab](_src/assets/images/logo-adalab-80px.png)
-
-![](https://media.giphy.com/media/WVudyGEaizNeg/giphy.gif)
+![Adalab](./ada.png)
 
 # Ejercicio de evaluación final para superar el Módulo 3 de Adalab.
 Usé HTML, SCSS y React ⚛️.
@@ -8,6 +6,8 @@ Usé HTML, SCSS y React ⚛️.
 Hecho con cariño por Andreina Romero alumna de la promoción Grace de Adalab 🌈
 
 # Evaluación Andreina Romero García
+
+![](https://media.giphy.com/media/WVudyGEaizNeg/giphy.gif)
 
 1️⃣ Hacer npm install para instalar todas las super dependencias
 
