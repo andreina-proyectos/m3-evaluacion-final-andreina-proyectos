@@ -7,11 +7,11 @@ Hecho con cariño por Andreina Romero alumna de la promoción Grace de Adalab �
 
 # Evaluación Andreina Romero García
 
-![](https://media.giphy.com/media/WVudyGEaizNeg/giphy.gif)
+![](https://media.giphy.com/media/q9KaEjVuKcpl6/source.gif)
 
 1️⃣ Hacer npm install para instalar todas las super dependencias
 
-2️⃣ Este proyecto usa HTML, CSS, SCSS, Javascript y Ract
+2️⃣ Este proyecto usa HTML, CSS, SCSS, Javascript y React
 
 3️⃣ Consiste en un buscador de personajes de la serie Rick & Morty
 
