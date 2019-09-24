@@ -1,9 +1,10 @@
 import React from 'react';
-import './App.css';
+import './index.scss';
 import {fetchData} from './services/FetchData';
 import { Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import CharacterDetail from './components/CharacterDetail';
+import {Link} from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
@@ -39,8 +40,11 @@ class App extends React.Component {
     const {rmData, query} = this.state;
     return (
       <div className="App">
-        <h1 className="title">RICK AND MORTY CHARACTERS</h1>
-
+        <header className="app__header">
+          <Link className="app__title-link" to="/">
+            <h1 className="app__title">RICK AND MORTY CHARACTERS</h1>
+          </Link>
+        </header>
         <Switch>
           <Route exact path="/" render={() => {
             return (
@@ -63,7 +67,9 @@ class App extends React.Component {
           }} 
           />
         </Switch>
-
+        <footer className="app__footer">
+          <p className="footer__phrase">Created with <span role="img" aria-label="heart">❣️</span> by Andreina Romero García in Adalab</p>
+        </footer>
       </div>
     );
   }

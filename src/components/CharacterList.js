@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 const CharacterList = (props) => {
   const {rmData, query} = props;
   return(
+  <div className="app__list-container">
     <ul className="character-list">
       {rmData
         .filter(item => {
@@ -15,7 +16,7 @@ const CharacterList = (props) => {
         })
         .map(item => {
           return(         
-            <li key={item.id} className="character-element">
+            <li key={item.id} className="character__card">
               <Link to={`/character-detail/${item.id}`}>
                 <CharacterCard
                 name = {item.name}
@@ -28,6 +29,7 @@ const CharacterList = (props) => {
         })
       }
     </ul>
+  </div>
   )
 }
 

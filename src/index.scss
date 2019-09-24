@@ -1,0 +1,139 @@
+*{
+  list-style: none;
+  text-align: center;
+  margin:0;
+  padding:0;
+  color:white;
+  text-decoration: none;
+  font-family: 'Oxygen', sans-serif;
+}
+
+#root {
+  width:100vw;
+}
+
+.App {
+  text-align: center;
+  list-style: none;
+  min-height: 100vh;
+  width:100vw;
+  // background-color: black;
+}
+
+.app__header{
+  width:100%;
+  display:flex;
+  justify-content: center;
+  margin:0;
+}
+
+.app__title {
+height: 1px;
+overflow:hidden;
+padding-top: 150px;
+background-image: url('./images/logo.png');
+background-repeat: no-repeat;
+background-size: 80%;
+background-position: center;
+}
+
+.app__title {
+  -webkit-animation: mover 1s infinite  alternate;
+  animation: mover 1s infinite  alternate;
+}
+.app__title {
+  -webkit-animation: mover 1s infinite  alternate;
+  animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+@keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+.app__filters {
+  margin:10px;
+}
+
+.filter {
+  margin:10px;
+  border-radius: 5px;
+  height: 20px;
+  color:black;
+  ::placeholder{
+    color:black;
+  }
+  border:solid 1px black;
+}
+
+.app__list-container {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.character-list {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 1fr;
+  @media all and (min-width: 360px) {
+      grid-template-columns: repeat(2, 1fr);
+  }
+  @media all and (min-width: 450px) {
+      grid-template-columns: repeat(3, 1fr);
+  }
+  @media all and (min-width: 768px) {
+      grid-template-columns: repeat(4, 1fr);
+  }
+  @media all and (min-width: 1024px) {
+      grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.character__card {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin:5px;
+width:150px;
+height: 200px;
+transition: .7s ease;
+&:hover{
+  background-color: #B0C44E;
+  border-radius: 10px;
+}
+  }
+
+.character__image {
+  width:120px;
+  height: auto; 
+  border-radius: 30px;
+  border: 1px solid black;
+}
+
+.character__name {
+  font-size: 15px;
+  background-color: #B0C44E;
+  color:black;
+  border-radius: 20px;
+  display: inline-block;
+  padding: 5px;
+}
+
+.character__specie {
+  font-size: 14px;
+}
+
+
+.footer__phrase {
+  margin-top:30px;
+  height: 30px;
+  font-size: 12px;
+}
+
+//detail card route
+
