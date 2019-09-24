@@ -15,7 +15,23 @@ const CharacterDetail = props => {
     )}
   else {};
 
+ 
   const cardClicked = rmData.find(item =>item.id === characterId);
+
+
+  const isAlive = () => {
+    if (cardClicked.status === 'Dead') {
+      return(
+      `Status: ${cardClicked.status}☠️`
+      )}
+    else if (cardClicked.status === 'Alive') {
+      return(
+      `Status: ${cardClicked.status}🤸🏼‍♀️`
+      )}
+      else{
+        return(`Status: ${cardClicked.status}❓`)
+      }
+  };
 
   if(cardClicked) {
     const {name, image, species, status, origin, episode} = cardClicked;
@@ -28,7 +44,7 @@ const CharacterDetail = props => {
               <img src={image} alt={`Imagen de ${name}`} className="detail__image"/>
             </div>
             <h2 className="character__name">{name}</h2>
-            <p className="detail__status">{`Status: ${status}`}</p>  
+            <p className="detail__status">{isAlive()}</p>  
             <p className="character__specie">{`Species: ${species}`}</p>  
             <p className="detail__origin">{`Origin: ${origin.name}`}</p>
             <p className="detail__episode">{`Episodes: ${episode.length}`}</p> 
