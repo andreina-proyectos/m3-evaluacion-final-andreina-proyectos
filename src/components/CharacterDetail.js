@@ -21,16 +21,18 @@ const CharacterDetail = props => {
     const {name, image, species, status, origin, episode} = cardClicked;
     return (
       <React.Fragment>
-        <Link to="/" className="link__go-back">Go back!</Link>
-        <div className="character-detail__container">
-          <div className="image-container">
-            <img src={image} alt={`Imagen de ${name}`} className="character__image"/>
+        <Link to="/" className="link__go-back">Go back! <span role="img" aria-label="arrow to go back ">⬅️</span></Link>
+        <div className="app__detail">
+          <div className="detail__card character__card">
+            <div className="image-container">
+              <img src={image} alt={`Imagen de ${name}`} className="detail__image"/>
+            </div>
+            <h2 className="character__name">{name}</h2>
+            <p className="detail__status">{`Status: ${status}`}</p>  
+            <p className="character__specie">{`Species: ${species}`}</p>  
+            <p className="detail__origin">{`Origin: ${origin.name}`}</p>
+            <p className="detail__episode">{`Episodes: ${episode.length}`}</p> 
           </div>
-          <h2 className="character__name">{name}</h2>
-          <p className="character__status">{`Status: ${status}`}</p>  
-          <p className="character__specie">{`Species: ${species}`}</p>  
-          <p className="character__origin">{`Origin: ${origin.name}`}</p>
-          <p className="character__episode">{`Episodes: ${episode.length}`}</p> 
         </div>
       </React.Fragment>
     );
@@ -39,7 +41,7 @@ const CharacterDetail = props => {
     return(
       <React.Fragment>
         <p className="not-found-phrase">No tenemos este personaje</p>
-        <Link to="/" className="link__go-back">Go back!</Link>
+        <Link to="/" className="link__go-back">Go back! <span role="img" aria-label="arrow to go back ">⬅️</span></Link>
       </React.Fragment>  
     )
   }
