@@ -11,9 +11,11 @@ class App extends React.Component {
     super(props);
     this.state = {
       rmData:[],
-      query:''
+      query:'',
+      gender:'all'
     }
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.getUserGender = this.getUserGender.bind(this);
   }
 
   componentDidMount() {
@@ -36,8 +38,15 @@ class App extends React.Component {
       })   
   }
 
+  getUserGender(event) {
+    const genderSelected = event.currentTarget.value;
+    this.setState({
+      gender: genderSelected
+    })
+  }
+
   render() {
-    const {rmData, query} = this.state;
+    const {rmData, query, gender} = this.state;
     return (
       <div className="App">
         <header className="app__header">
@@ -52,6 +61,8 @@ class App extends React.Component {
                 handleInputChange={this.handleInputChange}
                 rmData={rmData}
                 query={query}
+                gender={gender}
+                getUserGender={this.getUserGender}
               />
             )
           }} 
@@ -67,8 +78,9 @@ class App extends React.Component {
           }} 
           />
         </Switch>
+
         <footer className="app__footer">
-          <p className="footer__phrase">Created with <span role="img" aria-label="heart">❣️</span> by Andreina Romero García in Adalab</p>
+          <p className="footer__phrase">Created with <span role="img" aria-label="heart">❣️</span> by Andreina Romero García © in Adalab</p>
         </footer>
       </div>
     );

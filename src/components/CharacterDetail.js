@@ -34,7 +34,7 @@ const CharacterDetail = props => {
   };
 
   if(cardClicked) {
-    const {name, image, species, status, origin, episode} = cardClicked;
+    const {name, image, species, origin, episode} = cardClicked;
     return (
       <React.Fragment>
         <Link to="/" className="link__go-back">Go back! <span role="img" aria-label="arrow to go back ">⬅️</span></Link>
