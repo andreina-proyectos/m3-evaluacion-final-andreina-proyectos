@@ -1,10 +1,9 @@
 import React from 'react';
 import './index.scss';
 import {fetchData} from './services/FetchData';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import CharacterDetail from './components/CharacterDetail';
-import {Link} from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,10 +11,14 @@ class App extends React.Component {
     this.state = {
       rmData:[],
       query:'',
-      gender:'all'
+      gender:'all',
+      human: false,
+      alien: false,
     }
     this.handleInputChange = this.handleInputChange.bind(this);
     this.getUserGender = this.getUserGender.bind(this);
+    this.handleIsHuman = this.handleIsHuman.bind(this);
+    this.handleIsAlien = this.handleIsAlien.bind(this);
   }
 
   componentDidMount() {
@@ -32,10 +35,10 @@ class App extends React.Component {
   }
 
   handleInputChange(event) {
-      const query = event.currentTarget.value;
-      this.setState({
-        query: query
-      })   
+    const query = event.currentTarget.value;
+    this.setState({
+      query: query
+    })   
   }
 
   getUserGender(event) {
@@ -45,8 +48,22 @@ class App extends React.Component {
     })
   }
 
+  handleIsHuman(event) {
+    const isChecked = event.currentTarget.checked;
+    this.setState({
+      human: isChecked
+    })
+  }
+
+  handleIsAlien(event) {
+    const isChecked = event.currentTarget.checked;
+    this.setState({
+      alien: isChecked
+    })
+  }
+
   render() {
-    const {rmData, query, gender} = this.state;
+    const {rmData, query, gender, human, alien} = this.state;
     return (
       <div className="App">
         <header className="app__header">
@@ -63,6 +80,10 @@ class App extends React.Component {
                 query={query}
                 gender={gender}
                 getUserGender={this.getUserGender}
+                handleIsHuman={this.handleIsHuman}
+                handleIsAlien={this.handleIsAlien}
+                human={human}
+                alien={alien}
               />
             )
           }} 

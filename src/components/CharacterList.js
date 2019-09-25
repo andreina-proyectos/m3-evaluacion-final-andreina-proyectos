@@ -4,11 +4,35 @@ import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const CharacterList = (props) => {
-  const {rmData, query, gender} = props;
+  const {rmData, query, gender, alien, human} = props;
   return(
   <div className="app__list-container">
     <ul className="character-list">
       {rmData
+        .filter(item => {
+          if(human && item.species === 'Human') {
+            return true
+          }
+          else if(human && item.species !== 'Human') {
+            return false
+          }
+          else {
+            return true
+          }
+        })
+
+        .filter(item => {
+          if(alien && item.species === 'Alien') {
+            return true
+          }
+          else if (alien && item.species !== 'Alien') {
+            return false
+          }
+          else {
+            return true
+          }
+        })
+
         .filter(item => {
             if(gender===item.gender) {
               return (
