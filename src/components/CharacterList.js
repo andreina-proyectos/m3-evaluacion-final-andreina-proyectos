@@ -4,11 +4,21 @@ import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const CharacterList = (props) => {
-  const {rmData, query} = props;
+  const {rmData, query, gender} = props;
   return(
   <div className="app__list-container">
     <ul className="character-list">
       {rmData
+
+        .filter(item => {
+          if(gender === 'all') {
+            return true
+          }
+          else {
+            return gender===item.gender
+          }
+        })        
+
         .filter(item => {
           return(
             item.name.toUpperCase().includes(query.toUpperCase())
