@@ -4,7 +4,7 @@ import CharacterList from './CharacterList';
 import PropTypes from 'prop-types';
 
 const Home = props => {
-  const {rmData, query, handleInputChange, gender, getUserGender, handleIsHuman, handleIsAlien, human, alien} = props;
+  const {rmData, query, handleInputChange, gender, getUserGender, handleIsHuman, handleIsAlien, human, alien, handleChangeOrigin, origin} = props;
   return (
     <React.Fragment>
       <Filters
@@ -13,6 +13,8 @@ const Home = props => {
         query={query}
         handleIsHuman={handleIsHuman}
         handleIsAlien={handleIsAlien}
+        handleChangeOrigin={handleChangeOrigin}
+        origin={origin}
       />
       <CharacterList
         rmData={rmData}
@@ -20,6 +22,7 @@ const Home = props => {
         gender={gender}
         human={human}
         alien={alien}
+        origin={origin}
       />
     </React.Fragment>
     );

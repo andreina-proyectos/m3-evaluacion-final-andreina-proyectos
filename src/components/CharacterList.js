@@ -4,11 +4,15 @@ import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const CharacterList = (props) => {
-  const {rmData, query, gender, alien, human} = props;
+  const {rmData, query, gender, alien, human, origin} = props;
   return(
   <div className="app__list-container">
     <ul className="character-list">
       {rmData
+        .filter(item => {
+          return item.origin.name.toUpperCase().includes(origin.toUpperCase())
+        })
+
         .filter(item => {
           if(human && item.species === 'Human') {
             return true

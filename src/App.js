@@ -14,11 +14,13 @@ class App extends React.Component {
       gender:'all',
       human: false,
       alien: false,
+      origin:'',
     }
     this.handleInputChange = this.handleInputChange.bind(this);
     this.getUserGender = this.getUserGender.bind(this);
     this.handleIsHuman = this.handleIsHuman.bind(this);
     this.handleIsAlien = this.handleIsAlien.bind(this);
+    this.handleChangeOrigin = this.handleChangeOrigin.bind(this);
   }
 
   componentDidMount() {
@@ -62,8 +64,15 @@ class App extends React.Component {
     })
   }
 
+  handleChangeOrigin(event) {
+    const originSearched = event.currentTarget.value;
+    this.setState({
+      origin: originSearched,
+    })
+  }
+
   render() {
-    const {rmData, query, gender, human, alien} = this.state;
+    const {rmData, query, gender, human, alien, origin} = this.state;
     return (
       <div className="App">
         <header className="app__header">
@@ -84,9 +93,11 @@ class App extends React.Component {
                 handleIsAlien={this.handleIsAlien}
                 human={human}
                 alien={alien}
+                handleChangeOrigin={this.handleChangeOrigin}
+                origin={origin}
               />
             )
-          }} 
+          }}
           />
 
           <Route path="/character-detail/:id" render={(routerProps)=> {
