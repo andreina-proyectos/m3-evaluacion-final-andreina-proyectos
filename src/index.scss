@@ -168,6 +168,19 @@ background-color: #B0C44E;
   animation: moving 1s infinite  alternate;
 }
 
+.filter-origin {
+  border:1px solid black;
+  margin:5px;
+  padding:2px;
+  border-radius: 10px;
+  ::placeholder{
+    color:black;
+  }
+}
+
+.filter-human {
+  margin:5px;
+}
 
 @-webkit-keyframes moving {
   0% { transform: translateX(0); }

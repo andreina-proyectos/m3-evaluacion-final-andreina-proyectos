@@ -24,7 +24,7 @@ const Filters = (props) => {
 
       <label htmlFor="origin"></label>
 
-      <input value={origin} onChange={handleChangeOrigin} id="origin"  type="text" className="filter-origin input.filter"/>
+      <input value={origin} onChange={handleChangeOrigin} id="origin"  type="text" className="filter-origin inputfilter" placeholder="Escribe un planeta"/>
     </div>
   )
 }

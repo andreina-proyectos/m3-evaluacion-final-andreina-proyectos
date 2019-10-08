@@ -3,7 +3,7 @@
 # Ejercicio de evaluación final para superar el Módulo 3 de Adalab.
 Usé HTML, SCSS y React ⚛️.
 
-Hecho con cariño por Andreina Romero alumna de la promoción Grace de Adalab 🌈
+Hecho con cariño por Andreina Romero alumna de la promoción Grace de Adalab
 
 # Evaluación Andreina Romero García
 
