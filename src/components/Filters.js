@@ -23,7 +23,8 @@ const Filters = (props) => {
       </label>
 
       <label htmlFor="origin"></label>
-      <input value={origin} onChange={handleChangeOrigin} id="origin"  type="text" className="filter-origin"/>
+
+      <input value={origin} onChange={handleChangeOrigin} id="origin"  type="text" className="filter-origin input.filter"/>
     </div>
   )
 }
