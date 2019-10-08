@@ -65,6 +65,12 @@ animation: mover 1s infinite  alternate;
   border:solid 1px black;
 }
 
+.filter__select {
+  color:black;
+  border:solid 1px black;
+  height: 25px;
+}
+
 .app__list-container {
   display: flex;
   justify-content: center;
