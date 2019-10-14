@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 const Filters = (props) => {
   const {handleInputChange, query, getUserGender, handleIsHuman, handleIsAlien, handleChangeOrigin, origin} = props;
+  
   return(
     <div className="app__filters">
       <label htmlFor="input">Busca tu personaje favorito por nombre o género </label>
@@ -23,7 +24,6 @@ const Filters = (props) => {
       </label>
 
       <label htmlFor="origin"></label>
-
       <input value={origin} onChange={handleChangeOrigin} id="origin"  type="text" className="filter-origin inputfilter" placeholder="Escribe un planeta"/>
     </div>
   )

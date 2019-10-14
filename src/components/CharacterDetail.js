@@ -12,32 +12,31 @@ const CharacterDetail = props => {
         <p className="message-route">Sólo tenemos 20 personajes!</p>
         <Link to="/" className="link__go-back">Go back!</Link>
       </React.Fragment>
-    )}
-  else {};
+    )
+  }
 
- 
   const cardClicked = rmData.find(item =>item.id === characterId);
-
-
   const isAlive = () => {
     if (cardClicked.status === 'Dead') {
       return(
-      `Status: ${cardClicked.status}☠️`
+        `Status: ${cardClicked.status}☠️`
       )}
     else if (cardClicked.status === 'Alive') {
       return(
-      `Status: ${cardClicked.status}🤸🏼‍♀️`
+        `Status: ${cardClicked.status}🤸🏼‍♀️`
       )}
       else{
         return(`Status: ${cardClicked.status}❓`)
       }
   };
 
+  
   if(cardClicked) {
     const {name, image, species, origin, episode} = cardClicked;
     return (
       <React.Fragment>
-        <Link to="/" className="link__go-back">Go back! <span role="img" aria-label="arrow to go back ">⬅️</span></Link>
+        <Link to="/" className="link__go-back">Go back! <span role="img" aria-label="arrow to go back ">⬅️</span>
+        </Link>
         <div className="app__detail">
           <div className="detail__card character__card">
             <div className="image-container">
@@ -53,11 +52,13 @@ const CharacterDetail = props => {
       </React.Fragment>
     );
   }
+
   else{
     return(
       <React.Fragment>
         <p className="not-found-phrase">No tenemos este personaje</p>
-        <Link to="/" className="link__go-back">Go back! <span role="img" aria-label="arrow to go back ">⬅️</span></Link>
+        <Link to="/" className="link__go-back">Go back! <span role="img" aria-label="arrow to go back ">⬅️</span>
+        </Link>
       </React.Fragment>  
     )
   }

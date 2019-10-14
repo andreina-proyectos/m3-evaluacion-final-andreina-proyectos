@@ -73,6 +73,7 @@ class App extends React.Component {
 
   render() {
     const {rmData, query, gender, human, alien, origin} = this.state;
+
     return (
       <div className="App">
         <header className="app__header">
@@ -80,6 +81,7 @@ class App extends React.Component {
             <h1 className="app__title">RICK AND MORTY CHARACTERS</h1>
           </Link>
         </header>
+        
         <Switch>
           <Route exact path="/" render={() => {
             return (

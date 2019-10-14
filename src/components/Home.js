@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 const Home = props => {
   const {rmData, query, handleInputChange, gender, getUserGender, handleIsHuman, handleIsAlien, human, alien, handleChangeOrigin, origin} = props;
+  
   return (
     <React.Fragment>
       <Filters
