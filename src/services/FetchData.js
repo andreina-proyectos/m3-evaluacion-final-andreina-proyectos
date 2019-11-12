@@ -1,4 +1,4 @@
-const endpoint = 'https://raw.githubusercontent.com/Adalab/rick-y-morty/master/data/rick-y-morty.json';
+const endpoint = 'https://rickandmortyapi.com/api/character/';
 
 const fetchData = () => {
     return fetch(endpoint).then(response => response.json())
